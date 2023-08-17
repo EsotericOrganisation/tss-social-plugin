@@ -1,10 +1,16 @@
 name: TSS-Social
-version: '${version}'
+version: '0.1'
 main: net.slqmy.tss_social.TSSSocialPlugin
 api-version: '1.20'
 prefix: TSS-Social
 dependencies:
-  - name: TSS-Core
-    required: true
-authors: [slqmy]
+  server:
+    TSS-Core:
+      required: true
+      load: BEFORE
+    TSS-Ranks:
+      required: true
+      load: BEFORE
+
+author: slqmy
 description: The plugin to manage social aspects of The Slimy Swamp, such as the messaging system, guilds and parties.
