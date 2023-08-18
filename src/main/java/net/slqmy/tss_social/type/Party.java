@@ -13,10 +13,9 @@ import java.util.UUID;
 public class Party {
 
   private final TSSSocialPlugin plugin;
-
-  private final UUID ownerUuid;
   private final LinkedList<UUID> partyGoerUuids;
   private final byte settingsBitField;
+  private UUID ownerUuid;
 
   public Party(UUID ownerUuid, LinkedList<UUID> partyGoerUuids, byte settingsBitField, TSSSocialPlugin plugin) {
 	this.plugin = plugin;
@@ -28,6 +27,10 @@ public class Party {
 
   public UUID getOwnerUuid() {
 	return ownerUuid;
+  }
+
+  public void setOwnerUuid(UUID ownerUuid) {
+	this.ownerUuid = ownerUuid;
   }
 
   public LinkedList<UUID> getPartyGoerUuids() {

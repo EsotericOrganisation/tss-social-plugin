@@ -23,6 +23,8 @@ import java.util.*;
 
 public class PartyCommand {
 
+  private static final Random random = new Random();
+
   public PartyCommand(@NotNull TSSSocialPlugin plugin) {
 	PartyManager partyManager = plugin.getPartyManager();
 	MessageManager messageManager = plugin.getCore().getMessageManager();
@@ -156,14 +158,26 @@ public class PartyCommand {
 							  Party party = partyManager.getPlayerParty(player);
 
 							  List<UUID> partyGoers = party.getPartyGoerUuids();
-							  partyGoers.remove(player.getUniqueId());
 
-							  if (partyGoers.isEmpty()) {
-								partyManager.getParties().remove(party);
-							  }
+							  UUID playerUuid = player.getUniqueId();
+							  partyGoers.remove(playerUuid);
 
 							  party.sendMessage(Message.PLAYER_LEFT, player.getName());
 							  messageManager.sendMessage(player, Message.LEFT_PARTY);
+
+							  if (partyGoers.isEmpty()) {
+								partyManager.getParties().remove(party);
+							  } else if (party.getOwnerUuid().equals(playerUuid)) {
+								UUID newPartyOwnerUuid = partyGoers.get(random.nextInt(partyGoers.size()));
+
+								party.setOwnerUuid(newPartyOwnerUuid);
+
+								Player newPartyOwner = Bukkit.getPlayer(newPartyOwnerUuid);
+								assert newPartyOwner != null;
+
+								messageManager.sendMessage(newPartyOwner, Message.YOU_ARE_NEW_PARTY_OWNER);
+								party.sendMessage(Message.NEW_PARTY_OWNER, newPartyOwner.getName());
+							  }
 							})
 			)
 			.withSubcommand(
