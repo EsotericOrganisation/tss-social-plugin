@@ -3,8 +3,10 @@ package net.slqmy.tss_social;
 import net.slqmy.tss_core.TSSCorePlugin;
 import net.slqmy.tss_ranks.TSSRanksPlugin;
 import net.slqmy.tss_social.command.MessageCommand;
+import net.slqmy.tss_social.command.PartyCommand;
 import net.slqmy.tss_social.command.ReplyCommand;
 import net.slqmy.tss_social.event.listener.ConnectionListener;
+import net.slqmy.tss_social.manager.PartyManager;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -18,8 +20,8 @@ public final class TSSSocialPlugin extends JavaPlugin {
 
   private final TSSCorePlugin core = (TSSCorePlugin) pluginManager.getPlugin("TSS-Core");
   private final TSSRanksPlugin ranksPlugin = (TSSRanksPlugin) pluginManager.getPlugin("TSS-Ranks");
-
   private final HashMap<UUID, UUID> conversations = new HashMap<>();
+  private PartyManager partyManager;
 
   public TSSCorePlugin getCore() {
 	return core;
@@ -33,10 +35,18 @@ public final class TSSSocialPlugin extends JavaPlugin {
 	return conversations;
   }
 
+  public PartyManager getPartyManager() {
+	return partyManager;
+  }
+
   @Override
   public void onEnable() {
+	partyManager = new PartyManager();
+
 	new MessageCommand(this);
 	new ReplyCommand(this);
+
+	new PartyCommand(this);
 
 	pluginManager.registerEvents(new ConnectionListener(this), this);
   }
