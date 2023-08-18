@@ -35,4 +35,40 @@ public class ConnectionListener implements Listener {
 	  conversations.remove(inverted.get(quitUuid));
 	}
   }
+
+  @EventHandler
+  public void onQuitWhilePartying(@NotNull PlayerQuitEvent event) {
+	Player player = event.getPlayer();
+	Party party = plugin.getPartyManager().getPlayerParty(event.getPlayer());
+
+	if (party == null) {
+	  return;
+	}
+
+	String playerName = player.getName();
+	party.sendMessage(Message.PLAYER_DISCONNECTED_FROM_PARTY, playerName);
+
+	int[] seconds = {0};
+	new BukkitRunnable() {
+
+	  @Override
+	  public void run() {
+		if (seconds[0] == 60 * 5) {
+		  Bukkit.getServer().dispatchCommand(player, "/party leave");
+		  party.sendMessage(Message.PLAYER_KICKED_BY_DISCONNECT, playerName);
+		  party.removePlayer(player);
+		  cancel();
+		  return;
+		}
+
+		if (player.isOnline()) {
+		  party.sendMessage(Message.PLAYER_HAS_REJOINED, playerName);
+		  cancel();
+		  return;
+		}
+
+		seconds[0]++;
+	  }
+	}.runTaskTimer(plugin, 1L, 20L);
+  }
 }
