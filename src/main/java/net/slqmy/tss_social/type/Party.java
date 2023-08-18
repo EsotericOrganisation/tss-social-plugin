@@ -5,6 +5,7 @@ import net.slqmy.tss_core.datatype.player.Message;
 import net.slqmy.tss_core.manager.MessageManager;
 import net.slqmy.tss_social.TSSSocialPlugin;
 import org.bukkit.Bukkit;
+import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -63,8 +64,10 @@ public class Party {
 
   public void sendMessage(Message message, Object... placeholderValues) {
 	for (UUID partyGoerUuid : partyGoerUuids) {
-	  Player player = Bukkit.getPlayer(partyGoerUuid);
-	  plugin.getCore().getMessageManager().sendMessage(player, message, placeholderValues);
+	  OfflinePlayer player = Bukkit.getOfflinePlayer(partyGoerUuid);
+	  if (player.isOnline()) {
+		plugin.getCore().getMessageManager().sendMessage((Player) player, message, placeholderValues);
+	  }
 	}
   }
 
