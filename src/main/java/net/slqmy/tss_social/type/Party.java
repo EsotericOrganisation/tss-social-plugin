@@ -1,6 +1,8 @@
 package net.slqmy.tss_social.type;
 
+import net.slqmy.tss_core.TSSCorePlugin;
 import net.slqmy.tss_core.datatype.player.Message;
+import net.slqmy.tss_core.manager.MessageManager;
 import net.slqmy.tss_social.TSSSocialPlugin;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
@@ -8,9 +10,12 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.LinkedList;
+import java.util.Random;
 import java.util.UUID;
 
 public class Party {
+
+  private static final Random random = new Random();
 
   private final TSSSocialPlugin plugin;
   private final LinkedList<UUID> partyGoerUuids;
@@ -69,5 +74,30 @@ public class Party {
 
   public boolean containsPlayer(@NotNull Player player) {
 	return containsPlayer(player.getUniqueId());
+  }
+
+  public void removePlayer(@NotNull Player player) {
+	UUID playerUuid = player.getUniqueId();
+	partyGoerUuids.remove(playerUuid);
+
+	sendMessage(Message.PLAYER_LEFT, player.getName());
+
+	TSSCorePlugin core = plugin.getCore();
+	MessageManager messageManager = core.getMessageManager();
+	messageManager.sendMessage(player, Message.LEFT_PARTY);
+
+	if (partyGoerUuids.isEmpty()) {
+	  plugin.getPartyManager().getParties().remove(this);
+	} else if (ownerUuid.equals(playerUuid)) {
+	  UUID newPartyOwnerUuid = partyGoerUuids.get(random.nextInt(partyGoerUuids.size()));
+
+	  ownerUuid = newPartyOwnerUuid;
+
+	  Player newPartyOwner = Bukkit.getPlayer(newPartyOwnerUuid);
+	  assert newPartyOwner != null;
+
+	  messageManager.sendMessage(newPartyOwner, Message.YOU_ARE_NEW_PARTY_OWNER);
+	  sendMessage(Message.NEW_PARTY_OWNER, newPartyOwner.getName());
+	}
   }
 }
