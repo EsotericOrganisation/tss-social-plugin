@@ -15,6 +15,7 @@ import net.slqmy.tss_social.TSSSocialPlugin;
 import net.slqmy.tss_social.manager.PartyManager;
 import net.slqmy.tss_social.type.Party;
 import org.bukkit.Bukkit;
+import org.bukkit.OfflinePlayer;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
@@ -116,7 +117,8 @@ public class PartyCommand {
 							  Party party = partyManager.getPlayerParty(player);
 
 							  for (UUID partyGoerUuid : party.getPartyGoerUuids()) {
-								player.sendMessage(Bukkit.getPlayer(partyGoerUuid).getName());
+								OfflinePlayer partyGoer = Bukkit.getOfflinePlayer(partyGoerUuid);
+								player.sendMessage(partyGoer.getName());
 							  }
 							})
 			)
