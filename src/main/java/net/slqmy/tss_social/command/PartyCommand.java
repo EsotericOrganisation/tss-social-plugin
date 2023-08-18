@@ -158,28 +158,7 @@ public class PartyCommand {
 							.withRequirement((CommandSender player) -> partyManager.isInParty((Player) player))
 							.executesPlayer((Player player, CommandArguments args) -> {
 							  Party party = partyManager.getPlayerParty(player);
-
-							  List<UUID> partyGoers = party.getPartyGoerUuids();
-
-							  UUID playerUuid = player.getUniqueId();
-							  partyGoers.remove(playerUuid);
-
-							  party.sendMessage(Message.PLAYER_LEFT, player.getName());
-							  messageManager.sendMessage(player, Message.LEFT_PARTY);
-
-							  if (partyGoers.isEmpty()) {
-								partyManager.getParties().remove(party);
-							  } else if (party.getOwnerUuid().equals(playerUuid)) {
-								UUID newPartyOwnerUuid = partyGoers.get(random.nextInt(partyGoers.size()));
-
-								party.setOwnerUuid(newPartyOwnerUuid);
-
-								Player newPartyOwner = Bukkit.getPlayer(newPartyOwnerUuid);
-								assert newPartyOwner != null;
-
-								messageManager.sendMessage(newPartyOwner, Message.YOU_ARE_NEW_PARTY_OWNER);
-								party.sendMessage(Message.NEW_PARTY_OWNER, newPartyOwner.getName());
-							  }
+							  party.removePlayer(player);
 							})
 			)
 			.withSubcommand(
