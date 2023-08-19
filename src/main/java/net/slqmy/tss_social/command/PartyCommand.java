@@ -29,6 +29,7 @@ public class PartyCommand {
 	MessageManager messageManager = plugin.getCore().getMessageManager();
 
 	new CommandAPICommand("party")
+			.withAliases("p")
 			.withArguments(new PlayerArgument("player"))
 			.executesPlayer((Player player, CommandArguments args) -> {
 			  Player target = (Player) args.get("player");
@@ -83,6 +84,7 @@ public class PartyCommand {
 			})
 			.withSubcommand(
 					new CommandAPICommand("accept")
+							.withAliases("a", "join")
 							.withRequirement((CommandSender sender) -> partyManager.getPartyRequests().get(((Player) sender).getUniqueId()) != null)
 							.executesPlayer((Player player, CommandArguments args) -> {
 							  Party playerParty = partyManager.getPlayerParty(player);
@@ -110,6 +112,7 @@ public class PartyCommand {
 			)
 			.withSubcommand(
 					new CommandAPICommand("list")
+							.withAliases("l", "li")
 							.withRequirement((CommandSender player) -> partyManager.isInParty((Player) player))
 							.executesPlayer((Player player, CommandArguments args) -> {
 							  Party party = partyManager.getPlayerParty(player);
@@ -122,6 +125,7 @@ public class PartyCommand {
 			)
 			.withSubcommand(
 					new CommandAPICommand("kick")
+							.withAliases("k")
 							.withRequirement((CommandSender sender) -> {
 							  Player player = (Player) sender;
 							  return partyManager.isInParty(player) && partyManager.getPlayerParty(player).getOwnerUuid().equals(player.getUniqueId());
