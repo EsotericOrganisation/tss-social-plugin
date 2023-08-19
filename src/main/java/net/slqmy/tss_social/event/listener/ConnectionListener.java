@@ -1,10 +1,15 @@
 package net.slqmy.tss_social.event.listener;
 
+import net.slqmy.tss_core.datatype.player.Message;
 import net.slqmy.tss_core.util.MapUtil;
 import net.slqmy.tss_social.TSSSocialPlugin;
+import net.slqmy.tss_social.type.Party;
+import org.bukkit.Bukkit;
+import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerQuitEvent;
+import org.bukkit.scheduler.BukkitRunnable;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.HashMap;
@@ -20,7 +25,7 @@ public class ConnectionListener implements Listener {
   }
 
   @EventHandler
-  public void onQuit(@NotNull PlayerQuitEvent event) {
+  public void onQuitWhileMessaging(@NotNull PlayerQuitEvent event) {
 	HashMap<UUID, UUID> conversations = plugin.getConversations();
 	UUID quitUuid = event.getPlayer().getUniqueId();
 
