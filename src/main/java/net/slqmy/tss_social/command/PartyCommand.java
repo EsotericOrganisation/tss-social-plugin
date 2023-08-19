@@ -24,8 +24,6 @@ import java.util.*;
 
 public class PartyCommand {
 
-  private static final Random random = new Random();
-
   public PartyCommand(@NotNull TSSSocialPlugin plugin) {
 	PartyManager partyManager = plugin.getPartyManager();
 	MessageManager messageManager = plugin.getCore().getMessageManager();
