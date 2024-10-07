@@ -1,6 +1,6 @@
-package net.slqmy.tss_social.manager;
+package org.esoteric_organisation.tss_social_plugin.manager;
 
-import net.slqmy.tss_social.type.Party;
+import org.esoteric_organisation.tss_social_plugin.type.Party;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 

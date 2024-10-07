@@ -1,14 +1,14 @@
-package net.slqmy.tss_social;
+package org.esoteric_organisation.tss_social_plugin;
 
 import net.slqmy.tss_core.TSSCorePlugin;
 import net.slqmy.tss_ranks.TSSRanksPlugin;
-import net.slqmy.tss_social.command.ChatCommand;
-import net.slqmy.tss_social.command.MessageCommand;
-import net.slqmy.tss_social.command.PartyCommand;
-import net.slqmy.tss_social.command.ReplyCommand;
-import net.slqmy.tss_social.event.listener.ConnectionListener;
-import net.slqmy.tss_social.manager.PartyManager;
-import net.slqmy.tss_social.type.ChatType;
+import org.esoteric_organisation.tss_social_plugin.command.ChatCommand;
+import org.esoteric_organisation.tss_social_plugin.command.MessageCommand;
+import org.esoteric_organisation.tss_social_plugin.command.PartyCommand;
+import org.esoteric_organisation.tss_social_plugin.command.ReplyCommand;
+import org.esoteric_organisation.tss_social_plugin.event.listener.ConnectionListener;
+import org.esoteric_organisation.tss_social_plugin.manager.PartyManager;
+import org.esoteric_organisation.tss_social_plugin.type.ChatType;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;

@@ -1,4 +1,4 @@
-package net.slqmy.tss_social.command;
+package org.esoteric_organisation.tss_social_plugin.command;
 
 import dev.jorel.commandapi.CommandAPICommand;
 import dev.jorel.commandapi.SuggestionInfo;
@@ -11,9 +11,9 @@ import net.slqmy.tss_core.datatype.player.Message;
 import net.slqmy.tss_core.manager.MessageManager;
 import net.slqmy.tss_core.util.MapUtil;
 import net.slqmy.tss_core.util.MessageUtil;
-import net.slqmy.tss_social.TSSSocialPlugin;
-import net.slqmy.tss_social.manager.PartyManager;
-import net.slqmy.tss_social.type.Party;
+import org.esoteric_organisation.tss_social_plugin.TSSSocialPlugin;
+import org.esoteric_organisation.tss_social_plugin.manager.PartyManager;
+import org.esoteric_organisation.tss_social_plugin.type.Party;
 import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.command.CommandSender;

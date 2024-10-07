@@ -1,4 +1,4 @@
-package net.slqmy.tss_social.command;
+package org.esoteric_organisation.tss_social_plugin.command;
 
 import dev.jorel.commandapi.CommandAPICommand;
 import dev.jorel.commandapi.arguments.GreedyStringArgument;
@@ -9,7 +9,7 @@ import net.slqmy.tss_core.datatype.Rank;
 import net.slqmy.tss_core.datatype.player.Message;
 import net.slqmy.tss_core.manager.MessageManager;
 import net.slqmy.tss_ranks.manager.RankManager;
-import net.slqmy.tss_social.TSSSocialPlugin;
+import org.esoteric_organisation.tss_social_plugin.TSSSocialPlugin;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 

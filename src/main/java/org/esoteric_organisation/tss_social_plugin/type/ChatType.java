@@ -1,4 +1,4 @@
-package net.slqmy.tss_social.type;
+package org.esoteric_organisation.tss_social_plugin.type;
 
 import net.slqmy.tss_core.datatype.player.Message;
 
