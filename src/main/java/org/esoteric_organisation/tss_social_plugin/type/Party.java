@@ -1,8 +1,8 @@
 package org.esoteric_organisation.tss_social_plugin.type;
 
-import net.slqmy.tss_core.TSSCorePlugin;
-import net.slqmy.tss_core.datatype.player.Message;
-import net.slqmy.tss_core.manager.MessageManager;
+import org.esoteric_organisation.tss_core_plugin.TSSCorePlugin;
+import org.esoteric_organisation.tss_core_plugin.datatype.player.Message;
+import org.esoteric_organisation.tss_core_plugin.manager.MessageManager;
 import org.esoteric_organisation.tss_social_plugin.TSSSocialPlugin;
 import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;

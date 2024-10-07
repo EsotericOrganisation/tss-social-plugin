@@ -1,7 +1,7 @@
 package org.esoteric_organisation.tss_social_plugin.event.listener;
 
-import net.slqmy.tss_core.datatype.player.Message;
-import net.slqmy.tss_core.util.MapUtil;
+import org.esoteric_organisation.tss_core_plugin.datatype.player.Message;
+import org.esoteric_organisation.tss_core_plugin.util.MapUtil;
 import org.esoteric_organisation.tss_social_plugin.TSSSocialPlugin;
 import org.esoteric_organisation.tss_social_plugin.type.Party;
 import org.bukkit.Bukkit;

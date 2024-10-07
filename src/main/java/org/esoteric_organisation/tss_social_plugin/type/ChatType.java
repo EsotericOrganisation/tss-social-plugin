@@ -1,6 +1,6 @@
 package org.esoteric_organisation.tss_social_plugin.type;
 
-import net.slqmy.tss_core.datatype.player.Message;
+import org.esoteric_organisation.tss_core_plugin.datatype.player.Message;
 
 public enum ChatType {
 
