@@ -5,10 +5,10 @@ api-version: '1.21'
 prefix: TSS-Social
 dependencies:
   server:
-    TSS-Core:
+    tss-core-plugin:
       required: true
       load: BEFORE
-    TSS-Ranks:
+    tss-ranks-plugin:
       required: true
       load: BEFORE
 
