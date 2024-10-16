@@ -20,8 +20,8 @@ public final class TSSSocialPlugin extends JavaPlugin {
 
   private final PluginManager pluginManager = Bukkit.getPluginManager();
 
-  private final TSSCorePlugin core = (TSSCorePlugin) pluginManager.getPlugin("tss-core-plugin");
-  private final TSSRanksPlugin ranksPlugin = (TSSRanksPlugin) pluginManager.getPlugin("tss-ranks-plugin");
+  private final TSSCorePlugin core = (TSSCorePlugin) pluginManager.getPlugin("TSSCore");
+  private final TSSRanksPlugin ranksPlugin = (TSSRanksPlugin) pluginManager.getPlugin("TSSRanks");
   private final HashMap<UUID, UUID> conversations = new HashMap<>();
   private final HashMap<UUID, ChatType> playerChatModes = new HashMap<>();
   private PartyManager partyManager;
