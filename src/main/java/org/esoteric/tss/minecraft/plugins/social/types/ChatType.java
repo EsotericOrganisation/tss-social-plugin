@@ -1,6 +1,6 @@
-package org.esoteric_organisation.tss_social_plugin.type;
+package org.esoteric.tss.minecraft.plugins.social.types;
 
-import org.esoteric_organisation.tss_core_plugin.datatype.player.Message;
+import org.esoteric.tss.minecraft.plugins.core.data.player.Message;
 
 public enum ChatType {
 

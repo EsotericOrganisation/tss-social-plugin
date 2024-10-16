@@ -1,16 +1,16 @@
-package org.esoteric_organisation.tss_social_plugin.command;
+package org.esoteric.tss.minecraft.plugins.social.commands;
 
 import dev.jorel.commandapi.CommandAPICommand;
 import dev.jorel.commandapi.arguments.GreedyStringArgument;
 import dev.jorel.commandapi.arguments.PlayerArgument;
 import dev.jorel.commandapi.executors.CommandArguments;
 import net.kyori.adventure.text.Component;
-import org.esoteric_organisation.tss_core_plugin.datatype.Colour;
-import org.esoteric_organisation.tss_core_plugin.datatype.Rank;
-import org.esoteric_organisation.tss_core_plugin.datatype.player.Message;
-import org.esoteric_organisation.tss_core_plugin.manager.MessageManager;
-import org.esoteric_organisation.tss_ranks_plugin.manager.RankManager;
-import org.esoteric_organisation.tss_social_plugin.TSSSocialPlugin;
+import org.esoteric.tss.minecraft.plugins.core.data.Colour;
+import org.esoteric.tss.minecraft.plugins.core.data.Rank;
+import org.esoteric.tss.minecraft.plugins.core.data.player.Message;
+import org.esoteric.tss.minecraft.plugins.core.managers.MessageManager;
+import org.esoteric.tss.minecraft.plugins.ranks.managers.RankManager;
+import org.esoteric.tss.minecraft.plugins.social.TSSSocialPlugin;
 import org.bukkit.entity.Player;
 
 import java.util.HashMap;

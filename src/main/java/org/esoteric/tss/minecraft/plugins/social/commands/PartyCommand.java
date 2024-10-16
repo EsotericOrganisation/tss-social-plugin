@@ -1,4 +1,4 @@
-package org.esoteric_organisation.tss_social_plugin.command;
+package org.esoteric.tss.minecraft.plugins.social.commands;
 
 import dev.jorel.commandapi.CommandAPICommand;
 import dev.jorel.commandapi.SuggestionInfo;
@@ -7,13 +7,13 @@ import dev.jorel.commandapi.arguments.PlayerArgument;
 import dev.jorel.commandapi.executors.CommandArguments;
 import net.kyori.adventure.text.TextComponent;
 import net.kyori.adventure.text.event.ClickEvent;
-import org.esoteric_organisation.tss_core_plugin.datatype.player.Message;
-import org.esoteric_organisation.tss_core_plugin.manager.MessageManager;
-import org.esoteric_organisation.tss_core_plugin.util.MapUtil;
-import org.esoteric_organisation.tss_core_plugin.util.MessageUtil;
-import org.esoteric_organisation.tss_social_plugin.TSSSocialPlugin;
-import org.esoteric_organisation.tss_social_plugin.manager.PartyManager;
-import org.esoteric_organisation.tss_social_plugin.type.Party;
+import org.esoteric.tss.minecraft.plugins.core.data.player.Message;
+import org.esoteric.tss.minecraft.plugins.core.managers.MessageManager;
+import org.esoteric.tss.minecraft.plugins.core.util.MapUtil;
+import org.esoteric.tss.minecraft.plugins.core.util.MessageUtil;
+import org.esoteric.tss.minecraft.plugins.social.TSSSocialPlugin;
+import org.esoteric.tss.minecraft.plugins.social.managers.PartyManager;
+import org.esoteric.tss.minecraft.plugins.social.types.Party;
 import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.command.CommandSender;

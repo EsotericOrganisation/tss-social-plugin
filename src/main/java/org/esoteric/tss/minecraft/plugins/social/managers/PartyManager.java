@@ -1,6 +1,6 @@
-package org.esoteric_organisation.tss_social_plugin.manager;
+package org.esoteric.tss.minecraft.plugins.social.managers;
 
-import org.esoteric_organisation.tss_social_plugin.type.Party;
+import org.esoteric.tss.minecraft.plugins.social.types.Party;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 

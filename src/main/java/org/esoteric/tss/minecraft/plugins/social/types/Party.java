@@ -1,9 +1,9 @@
-package org.esoteric_organisation.tss_social_plugin.type;
+package org.esoteric.tss.minecraft.plugins.social.types;
 
-import org.esoteric_organisation.tss_core_plugin.TSSCorePlugin;
-import org.esoteric_organisation.tss_core_plugin.datatype.player.Message;
-import org.esoteric_organisation.tss_core_plugin.manager.MessageManager;
-import org.esoteric_organisation.tss_social_plugin.TSSSocialPlugin;
+import org.esoteric.tss.minecraft.plugins.core.TSSCorePlugin;
+import org.esoteric.tss.minecraft.plugins.core.data.player.Message;
+import org.esoteric.tss.minecraft.plugins.core.managers.MessageManager;
+import org.esoteric.tss.minecraft.plugins.social.TSSSocialPlugin;
 import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.Player;
